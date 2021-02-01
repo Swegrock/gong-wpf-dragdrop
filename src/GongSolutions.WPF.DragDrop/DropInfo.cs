@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Linq;
 using System.Windows;
@@ -103,13 +103,6 @@ namespace GongSolutions.Wpf.DragDrop
                 this.TargetGroup = itemsControl.FindGroup(this.DropPosition);
                 this.VisualTargetOrientation = itemsControl.GetItemsPanelOrientation();
                 this.VisualTargetFlowDirection = itemsControl.GetItemsPanelFlowDirection();
-
-                if (item == null)
-                {
-                    // ok, no item found, so maybe we can found an item at top, left, right or bottom
-                    item = itemsControl.GetItemContainerAt(this.DropPosition, this.VisualTargetOrientation);
-                    directlyOverItem = DropPosition.DirectlyOverElement(this.item, itemsControl);
-                }
 
                 if (item == null && this.TargetGroup != null && this.TargetGroup.IsBottomLevel)
                 {
